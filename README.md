@@ -16,6 +16,7 @@ You can run the seeder with the following command:
 npm run seed
 If you're using TypeScript, you might need to run it with:
 ts-node ./path/to/seed-script.ts
+ts-node ./krom-backend/seeds/seed.sql
 
 3. Running the Backend (BE)
 Once the database is populated, you can start the backend server.
@@ -62,6 +63,7 @@ npm run seed
 Atau jika menggunakan TypeScript:
 
 ts-node ./path/to/seed-script.ts
+ts-node ./krom-backend/seeds/seed.sql
 
 3. Menjalankan Backend (BE)
 Setelah database siap dengan data awal, Anda dapat menjalankan server backend.
