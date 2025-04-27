@@ -13,10 +13,14 @@ If you don't have a docker-compose.yml file yet, make sure to create one with th
 Before running the backend, you need to execute the seeder to populate the database with initial data.
 
 Run the Seeder on the Backend:
+
 Usually, the seeder script is located inside the src/seeders or database/seeders folder.
+
 You can run the seeder with the following command:
 npm run seed
+
 If you're using TypeScript, you might need to run it with:
+
 ts-node ./path/to/seed-script.ts
 ts-node ./krom-backend/seeds/seed.sql
 
