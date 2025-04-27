@@ -1,0 +1,452 @@
+/* Reset default margin and font */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead {
+    background-color: #f3f3f3;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f0f9f0;
+}
+
+tr.selected {
+    background-color: #e0f0e0;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+}
+
+button.primary {
+    background-color: #2d7b39;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+button.outline {
+    background-color: white;
+    color: #2d7b39;
+    border: 1px solid #2d7b39;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+/* Form layout */
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-grid > div {
+    flex: 0 0 45%;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    padding: 8px 16px;
+    border: 1px solid green;
+    color: green;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #e6ffe6;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters select {
+    padding: 8px;
+}
+
+.applicants-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.applicants-table th, .applicants-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.applicants-table thead {
+    background-color: #f3f3f3;
+}
+
+.applicants-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.selected-row {
+    background-color: #e0f0e0;
+}
+
+.right-panel {
+    width: 400px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.photo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.candidate-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.detail-item {
+    margin-bottom: 10px;
+}
+
+.detail-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.rejected {
+    color: red;
+}
+
+.status.accepted {
+    color: green;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-green {
+    flex: 1;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-green:hover {
+    background-color: darkgreen;
+}
+
+.btn-outline {
+    flex: 1;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background-color: #f3f3f3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
+}
+
+/* Add Applicant Page Style */
+
+/* Container untuk Add Page */
+.add-container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.add-header {
+    background-color: #2d7b39;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Form Section */
+.add-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.add-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* Grid Form */
+.add-form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.add-form-grid > .form-group {
+    flex: 0 0 45%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    height: 28px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+}
+
+/* Resume Section */
+.resume-upload {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.resume-upload label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resume-upload input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit Button */
+.submit-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.submit-button {
+    background-color: #2d7b39;
+    color: white;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #25692e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .add-form-grid > .form-group {
+        flex: 0 0 100%;
+    }
+}
+
+.detail-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 220px 1fr; /* Label lebih lebar */
+    align-items: center;
+    margin-bottom: 16px; /* Spasi antar baris */
+    font-size: 16px;
+    gap: 2px; /* Jarak besar antar label dan value */
+}
+
+.detail-item .label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.detail-item .value {
+    text-align: left;
+}
+
+.detail-item .email a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.detail-item .resume a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.rejected {
+    color: red;
+}
+
+.status.accepted {
+    color: green;
+}
+
+.search-pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* kasih jarak bawah dikit */
+}
+
+.search-container input {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.pagination button {
+    margin: 0 5px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #f0f0f0;
+}
+
+.pagination button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+.page-number {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+
