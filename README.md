@@ -4,6 +4,7 @@ Jika Anda menggunakan Docker untuk MySQL, pertama-tama pastikan Anda menjalankan
 Build dan jalankan Docker Compose untuk memulai MySQL:
 docker-compose up --build
 Jika Anda belum memiliki file docker-compose.yml, pastikan Anda menambahkannya dengan konfigurasi yang sesuai.
+
 2. Menjalankan Seeder untuk Database
 Sebelum menjalankan backend, pastikan Anda menjalankan seeder untuk mengisi data awal ke dalam database.
 
@@ -12,6 +13,7 @@ npm run seed
 Atau jika menggunakan TypeScript:
 
 ts-node ./path/to/seed-script.ts
+
 3. Menjalankan Backend (BE)
 Setelah database siap dengan data awal, Anda dapat menjalankan server backend.
 
@@ -22,6 +24,7 @@ npm run dev di dalam file krom-backend
 Atau, jika menggunakan TypeScript, pastikan ada script yang menjalankan kompilasi dan server, misalnya dengan ts-node:
 
 ts-node-dev --respawn --transpileOnly src/index.ts
+
 4. Menjalankan Frontend (FE)
 Terakhir, jalankan aplikasi frontend yang biasanya dibangun dengan ReactJS.
 
