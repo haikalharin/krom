@@ -1,8 +1,38 @@
 /* Reset default margin and font */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+/* Navbar style */
+.navbar {
+    background-color: #2d7b39; /* Warna background navbar */
+    padding: 10px 20px; /* Memberikan padding pada navbar */
+    display: flex; /* Menggunakan flexbox untuk menata link secara horizontal */
+    justify-content: flex-start; /* Menyusun item navbar dari kiri ke kanan */
+    align-items: center; /* Menyusun item navbar di tengah secara vertikal */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek */
 }
+
+/* Link navbar */
+.nav-link {
+    color: white; /* Warna teks link */
+    text-decoration: none; /* Menghapus garis bawah di link */
+    margin-right: 20px; /* Memberikan jarak antar link */
+    font-size: 1.1rem; /* Ukuran font link */
+    font-weight: 500; /* Memberikan ketebalan pada font */
+    font-family: 'Arial', sans-serif; /* Menambahkan jenis font di link */
+    padding: 8px 15px; /* Memberikan padding di dalam link */
+    border-radius: 4px; /* Menambahkan sudut membulat pada link */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi untuk perubahan background dan transformasi */
+}
+
+/* Efek hover pada link */
+.nav-link:hover {
+    background-color: #24932b; /* Warna background saat hover */
+    transform: translateY(-2px); /* Sedikit pergeseran saat hover untuk efek dimensi */
+}
+
+/* Menghilangkan garis bawah link saat hover */
+.nav-link:hover {
+    text-decoration: none;
+}
+
 
 /* Table */
 table {
@@ -447,6 +477,10 @@ input {
     font-weight: bold;
 }
 
-
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
 
 

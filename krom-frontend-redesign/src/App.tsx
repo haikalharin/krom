@@ -1,23 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-// import Detail from './pages/Detail';
-import Add from './pages/Add';
-import FileUpload from './components/FileUpload';
+import Home from './pages/home/Home';
+import Add from './pages/addApplicants/Add';
+import './pages/styles.css'; // Assuming you have a global CSS file
 
 const App = () => {
     return (
-        <div style={{ padding: 20 }}>
+        <div className="app-container">
             <Router>
-                <nav>
-                    <Link to="/">Home</Link> | <Link to="/add">Add Applicant</Link>
-                </nav>
-                <hr />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    {/*<Route path="/applicant/:id" component={Detail} />*/}
-                    <Route path="/add" component={Add} />
-                </Switch>
+                <div className="sidebar">
+                    <nav className="navbar">
+                        <Link to="/" className="nav-link">Home</Link>
+                        <Link to="/add" className="nav-link">Add Applicant</Link>
+                    </nav>
+                </div>
+
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/add" component={Add} />
+                    </Switch>
+                </div>
             </Router>
         </div>
     );
