@@ -1,3 +1,5 @@
+ENGLISH
+
 1. Running MySQL with Docker
 If you are using Docker for MySQL, first make sure to start the MySQL container. Here’s how:
 
@@ -40,6 +42,10 @@ npm run dev (in krom-frontend file)
 After running all parts, make sure the backend and frontend are properly connected.
 Test if the backend APIs are working correctly and the frontend can access them.
 
+
+
+
+INDONESIA
 
 1. Menjalankan MySQL dengan Docker
 Jika Anda menggunakan Docker untuk MySQL, pertama-tama pastikan Anda menjalankan kontainer MySQL. Berikut langkah-langkahnya:
