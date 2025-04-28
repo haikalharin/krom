@@ -6,7 +6,7 @@ services:
     container_name: mysql_krom
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: krom_db
     ports:
       - "3307:3306"
