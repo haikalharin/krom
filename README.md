@@ -35,6 +35,10 @@ then the application can be used
 
 Project How It Works
 
+INITIAL
+krom-backend	cd krom-backend && npm install && npm run dev:with-seeds
+
+WITHOUT SEEDS
 krom-backend cd krom-backend && npm install && npm run dev
 
 krom-frontend cd krom-frontend && npm install && npm run dev
@@ -62,7 +66,9 @@ npm run dev
 Krom-FRONTEND
 
 cd krom-frontend
+
 npm install
+
 npm run dev
 
 
@@ -72,7 +78,13 @@ maka aplikasi sudah dapat digunakan
 
 
 Project	Cara Runing
+
+INITIAL
+krom-backend	cd krom-backend && npm install && npm run dev:with-seeds
+
+TANPA SEEDS
 krom-backend	cd krom-backend && npm install && npm run dev
+
 krom-frontend	cd krom-frontend && npm install && npm run dev
 
 
