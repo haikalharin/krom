@@ -5,22 +5,31 @@ to run the project, enter this prompt into the terminal sequentially
 Krom-BACKEND
 
 cd krom-backend
+
 npm install
+
 npm run dev
+
 Note: When running npm run dev, the seed is already yellow because it has been set in the package.json file
+
 
 Krom-FRONT
 
 cd krom-frontend
+
 npm install
+
 npm run dev
+
 
 then the application can be used
 
 📦 Conclusion
 
 Project How It Works
+
 krom-backend cd krom-backend && npm install && npm run dev
+
 krom-frontend cd krom-frontend && npm install && npm run dev
 
 
