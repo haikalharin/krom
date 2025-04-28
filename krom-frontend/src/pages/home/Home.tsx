@@ -1,72 +1,28 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles.css';
-import {Applicant} from "./types";
-import api from "../../services/api";
-import ApplicantDetail from "./components/ApplicantsDetail";
-import ApplicantList from "./components/ApplicantList";
+import { useHome } from './UseHome';
+import ApplicantList from './components/ApplicantList';
+import ApplicantDetail from './components/ApplicantsDetail';
 
-const Home = () => {
-  const [applicants, setApplicants] = useState<Applicant[]>([]);
-  const [filtered, setFiltered] = useState<Applicant[]>([]);
-  const [selected, setSelected] = useState<Applicant | null>(null);
-  const [filters, setFilters] = useState({ location: '', role: '', status: '' });
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const itemsPerPage = 10;
-
-  useEffect(() => {
-    api.get('/applicants').then(res => {
-      setApplicants(res.data);
-      setFiltered(res.data);
-    });
-  }, []);
-
-  const getUniqueValues = (key: keyof Applicant) => {
-    return [...new Set(applicants.map(a => a[key]).filter(Boolean))];
-  };
-
-  const handleFilterChange = (key: string, value: string) => {
-    const newFilters = { ...filters, [key]: value };
-    setFilters(newFilters);
-    filterApplicants(newFilters, searchTerm);
-  };
-
-  const handleSearchChange = (value: string) => {
-    setSearchTerm(value);
-    filterApplicants(filters, value);
-  };
-
-  const filterApplicants = (filterValues: typeof filters, search: string) => {
-    const result = applicants.filter((a) => {
-      const matchLocation = !filterValues.location || a.location.toLowerCase() === filterValues.location.toLowerCase();
-      const matchRole = !filterValues.role || a.role.toLowerCase() === filterValues.role.toLowerCase();
-      const matchStatus = !filterValues.status || a.status.toLowerCase() === filterValues.status.toLowerCase();
-      const matchSearch = !search || a.name.toLowerCase().includes(search.toLowerCase());
-
-      return matchLocation && matchRole && matchStatus && matchSearch;
-    });
-
-    setFiltered(result);
-    setCurrentPage(1);
-  };
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
-
-  const handleNextPage = () => {
-    if (currentPage < Math.ceil(filtered.length / itemsPerPage)) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+export default function Home() {
+  const {
+    applicants,
+    filtered,
+    selected,
+    setSelected,
+    filters,
+    photo,
+    photoError,
+    searchTerm,
+    currentPage,
+    currentItems,
+    getUniqueValues,
+    handleFilterChange,
+    handleSearchChange,
+    handlePhotoChange,
+    handleUploadPhoto,
+    handleNextPage,
+    handlePrevPage,
+  } = useHome();
 
   return (
       <div className="container">
@@ -119,7 +75,7 @@ const Home = () => {
               <span className="page-number">{currentPage}</span>
               <button
                   onClick={handleNextPage}
-                  disabled={currentPage === Math.ceil(filtered.length / itemsPerPage)}
+                  disabled={currentPage === Math.ceil(filtered.length / 10)}
               >&gt;</button>
             </div>
           </div>
@@ -133,9 +89,16 @@ const Home = () => {
         </div>
 
         {/* Right Panel */}
-        {selected && <ApplicantDetail applicant={selected} />}
+        {selected && (
+            <div className="right-panel">
+              <div className="detail-header">
+                <button className="close-btn" onClick={() => setSelected(null)}>
+                  ✕
+                </button>
+              </div>
+              <ApplicantDetail applicant={selected} />
+            </div>
+        )}
       </div>
   );
-};
-
-export default Home;
+}
