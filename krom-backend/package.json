@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts"
+    "seed": "ts-node-dev seeds/seed.ts",
+    "dev": "ts-node-dev src/index.ts",
+    "dev:with-seeds": "npm run seed && ts-node-dev src/index.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
