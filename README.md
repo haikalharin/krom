@@ -1,4 +1,26 @@
 ENGLISH
+#if with docker enter this prompt into the terminal sequentially
+
+docker-compose up --build
+
+#for check status container
+
+docker-compose ps
+
+#For access DB
+
+mysql -h 127.0.0.1 -P 3307 -u root -p
+
+#if with LOCAL Mysql
+
+please Create krom_db in your local DB mysql
+
+   - DB_HOST=localhost
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=krom_db
+      - DB_PORT=3306
+
 
 to run the project, enter this prompt into the terminal sequentially
 
@@ -46,6 +68,31 @@ krom-frontend cd krom-frontend && npm install && npm run dev
 
 
 INDONESIA
+
+#jika menggunakan docker masukan prompt ini ke terminal secara berurutan
+
+docker-compose up --build
+
+#untuk cek status container
+
+docker-compose ps
+
+#Untuk akses DB
+
+mysql -h 127.0.0.1 -P 3307 -u root -p
+
+#Jika menggunakan LOCAL Mysql
+
+tolong tambahkan "krom_db" ke dalam local db mySql di device anda
+
+      - DB_HOST=localhost
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=krom_db
+      - DB_PORT=3306
+
+
+
 untuk menjalakan project masukan promp ini ke terminal secara berurutan
 
 INITIAL
