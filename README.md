@@ -4,13 +4,20 @@ to run the project, enter this prompt into the terminal sequentially
 
 Krom-BACKEND
 
+INITIAL
+
 cd krom-backend
 
 npm install
 
+npm run dev:with-seeds
+
+Note: When running npm run dev:with-seeds, the seed is already yellow because it has been set in the package.json file
+
+RUN WITHOUT SEEDS
+
 npm run dev
 
-Note: When running npm run dev, the seed is already yellow because it has been set in the package.json file
 
 
 Krom-FRONT
@@ -37,12 +44,20 @@ krom-frontend cd krom-frontend && npm install && npm run dev
 INDONESIA
 untuk menjalakan project masukan promp ini ke terminal secara berurutan
 
-Krom-BACKEND
+INITIAL
 
 cd krom-backend
+
 npm install
+
+npm run dev:with-seeds
+
+Note:  Ketika menjalankan npm run dev:with-seeds sudah teruning juga seedsnya karena sudah di set dalam file package.json
+
+RUN TANPA SEEDS
+
 npm run dev
-Note: Ketika menjalankan npm run dev sudah teruning juga seedsnya karena sudah di set dalam file package.json
+
 
 Krom-FRONTEND
 
