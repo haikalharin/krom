@@ -11,7 +11,7 @@ const App = () => {
                 <div className="sidebar">
                     <nav className="navbar">
                         <Link to="/" className="nav-link">Home</Link>
-                        <Link to="/add" className="nav-link">Add Applicant</Link>
+                        {/*<Link to="/add" className="nav-link">Add Applicant</Link>*/}
                     </nav>
                 </div>
 
