@@ -21,6 +21,10 @@ export const useHome = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
 
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
+
     useEffect(() => {
         api.get('/applicants').then(res => {
             setApplicants(res.data);
@@ -101,9 +105,7 @@ export const useHome = () => {
         }
     };
 
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filtered.slice(indexOfFirstItem, indexOfLastItem);
+
 
     const handleNextPage = () => {
         if (currentPage < Math.ceil(filtered.length / itemsPerPage)) {

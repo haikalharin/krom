@@ -11,7 +11,10 @@ CREATE TABLE applicants
     resume_link        TEXT,
     status             ENUM ('Applied', 'Interview Done', 'Offer Accepted', 'Candidate rejected', 'Contacted', 'Offer Made', 'Interview Scheduled') DEFAULT 'Applied',
     year_of_experience INT,
-    photo_url          TEXT
+    photo_url          TEXT,
+    created_at         TIMESTAMP                                                                                                                    DEFAULT CURRENT_TIMESTAMP,
+    updated_at         TIMESTAMP                                                                                                                    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 INSERT INTO applicants (name, email, phone, role, location, resume_link, status, year_of_experience, photo_url)

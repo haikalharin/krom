@@ -1,4 +1,4 @@
-import { db } from '../models/db';
+import { db } from '../configDb/db';
 import {RowDataPacket} from "mysql2";
 
 export const getAllApplicants = async (status?: string, role?: string) => {
@@ -30,6 +30,42 @@ export const getAllApplicants = async (status?: string, role?: string) => {
   return rows;
 };
 
+export const getAllApplicantsPagination = async (
+    status?: string,
+    role?: string,
+    offset = 0,
+    limit = 10
+) => {
+  const conditions: string[] = [];
+  const params: any[] = [];
+
+  if (status) {
+    conditions.push('status = ?');
+    params.push(status);
+  }
+
+  if (role) {
+    conditions.push('role = ?');
+    params.push(role);
+  }
+
+  const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+
+  // Total count
+  const [countRows] = await db.query(
+      `SELECT COUNT(*) as total FROM applicants ${whereClause}`,
+      params
+  );
+  const total = (countRows as any)[0].total;
+
+  // Data paginated
+  const [dataRows] = await db.query(
+      `SELECT * FROM applicants ${whereClause} ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+      [...params, limit, offset]
+  );
+
+  return { data: dataRows, total };
+};
 
 export const getApplicantById = async (id: string) => {
   const [rows] = await db.query<RowDataPacket[]>(

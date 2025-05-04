@@ -8,6 +8,28 @@ export const getApplicants = async (req: Request, res: Response) => {
   res.json(applicants);
 };
 
+export const getApplicantsPagination = async (req: Request, res: Response) => {
+  const { status, role, page = '1', limit = '10' } = req.query;
+
+  const pageNumber = parseInt(page as string, 10);
+  const limitNumber = parseInt(limit as string, 10);
+  const offset = (pageNumber - 1) * limitNumber;
+
+  const { data, total } = await applicantService.getAllApplicantsPagination(
+      status as string,
+      role as string,
+      offset,
+      limitNumber
+  );
+
+  res.json({
+    currentPage: pageNumber,
+    totalPages: Math.ceil(total / limitNumber),
+    totalItems: total,
+    items: data,
+  });
+};
+
 export const getApplicant = async (req: Request, res: Response) => {
   const applicant = await applicantService.getApplicantById(req.params.id);
   if (!applicant) return res.status(404).json({ message: 'Not found' });

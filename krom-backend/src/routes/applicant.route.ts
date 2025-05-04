@@ -1,12 +1,15 @@
 import { Router } from 'express';
 import * as controller from '../controllers/applicant.controller';
 import { upload } from '../services/multer.service'; // pastikan Anda mengimpor middleware upload
-import { uploadPhoto } from '../controllers/applicant.controller'; // pastikan Anda mengimpor fungsi uploadPhoto
+import {getApplicantsPagination, uploadPhoto} from '../controllers/applicant.controller'; // pastikan Anda mengimpor fungsi uploadPhoto
 
 const router = Router();
 
 // Rute untuk mendapatkan semua applicant
 router.get('/', controller.getApplicants);
+
+// GET /applicants?status=pending&role=admin&page=2&limit=5
+router.get('/pagination', controller.getApplicantsPagination);
 
 // Rute untuk mendapatkan applicant berdasarkan ID
 router.get('/:id', controller.getApplicant);
